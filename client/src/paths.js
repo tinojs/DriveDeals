@@ -8,7 +8,8 @@ const Path = {
     About: '/about',
     Locations: '/locations',
     MyProfile: '/my-profile',
-    NotFound: '*',
+    CarDetails: '/cars',
+    // NotFound: '*',
 };
 
 export default Path;
