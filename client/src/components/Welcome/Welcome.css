@@ -1,0 +1,70 @@
+/* WelcomeMessage.css */
+.welcome-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .welcome-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .welcome-title {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .welcome-subtitle {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .browse-button {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 24px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .browse-button:hover {
+    background-color: #357ac9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .welcome-container {
+    background-image: url('../../assets/photo-1600005896822-bc3f31549775.avif')
+  }
+  
+
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .welcome-title {
+      font-size: 36px;
+    }
+    
+    .welcome-subtitle {
+      font-size: 20px;
+    }
+    
+    .browse-button {
+      font-size: 16px;
+      padding: 12px 24px;
+    }
+  }
