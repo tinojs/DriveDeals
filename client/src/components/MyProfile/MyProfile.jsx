@@ -7,30 +7,8 @@ const MyProfile = () => {
     lastName: 'Doe',
     email: 'johndoe@example.com',
     phone: '(555) 123-4567',
-    address: '123 Main St, Cityville, ST 12345'
   });
-
-  const [myAds, setMyAds] = useState([
-    {
-      id: 1,
-      make: 'Toyota',
-      model: 'Camry',
-      year: 2018,
-      price: 15000,
-      status: 'Active',
-      image: '/api/placeholder/200/150'
-    },
-    {
-      id: 2,
-      make: 'Honda',
-      model: 'Civic',
-      year: 2019,
-      price: 17500,
-      status: 'Pending',
-      image: '/api/placeholder/200/150'
-    }
-  ]);
-
+  
   const [activeSection, setActiveSection] = useState('profile');
   const [isEditing, setIsEditing] = useState(false);
 
@@ -54,17 +32,11 @@ const MyProfile = () => {
   return (
     <div className="profile-container">
       <div className="profile-sidebar">
-        <div 
+        <div
           className={`sidebar-item ${activeSection === 'profile' ? 'active' : ''}`}
           onClick={() => setActiveSection('profile')}
         >
           Personal Information
-        </div>
-        <div 
-          className={`sidebar-item ${activeSection === 'myAds' ? 'active' : ''}`}
-          onClick={() => setActiveSection('myAds')}
-        >
-          My Ads
         </div>
       </div>
 
@@ -90,12 +62,9 @@ const MyProfile = () => {
                   <label>Phone</label>
                   <p>{user.phone}</p>
                 </div>
-                <div className="profile-field">
-                  <label>Address</label>
-                  <p>{user.address}</p>
-                </div>
-                <button 
-                  className="edit-profile-btn" 
+              
+                <button
+                  className="edit-profile-btn"
                   onClick={handleEdit}
                 >
                   Edit Profile
@@ -149,14 +118,14 @@ const MyProfile = () => {
                   />
                 </div>
                 <div className="edit-actions">
-                  <button 
-                    className="save-btn" 
+                  <button
+                    className="save-btn"
                     onClick={handleSave}
                   >
                     Save Changes
                   </button>
-                  <button 
-                    className="cancel-btn" 
+                  <button
+                    className="cancel-btn"
                     onClick={handleEdit}
                   >
                     Cancel
@@ -167,30 +136,7 @@ const MyProfile = () => {
           </div>
         )}
 
-        {activeSection === 'myAds' && (
-          <div className="my-ads-section">
-            <h2>My Ads</h2>
-            {myAds.length === 0 ? (
-              <p>You haven't listed any cars yet.</p>
-            ) : (
-              <div className="ads-grid">
-                {myAds.map((ad) => (
-                  <div key={ad.id} className="ad-card">
-                    <img src={ad.image} alt={`${ad.make} ${ad.model}`} />
-                    <div className="ad-details">
-                      <h3>{ad.make} {ad.model}</h3>
-                      <p>Year: {ad.year}</p>
-                      <p>Price: ${ad.price.toLocaleString()}</p>
-                      <span className={`status ${ad.status.toLowerCase()}`}>
-                        {ad.status}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+
       </div>
     </div>
   );

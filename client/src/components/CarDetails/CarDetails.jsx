@@ -1,95 +1,116 @@
-import React from 'react';
-import { Car, DollarSign, Calendar, Activity, Fuel, Users, Check } from 'lucide-react';
-import styles from './CarDetails.module.css';
+import React, { useContext, useEffect, useState } from 'react';
+import './CarDetails.css';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const CarDetailsCard = ({ car = {
-  id: 'car123',
-  title: '2023 Toyota Camry XSE',
-  price: 32999,
-  year: 2023,
-  mileage: 12450,
-  fuelType: 'Hybrid',
-  transmission: 'Automatic',
-  seats: 5,
-  color: 'Midnight Black',
-  features: ['Leather Seats', 'Navigation', 'Backup Camera', 'Bluetooth', 'Sunroof'],
-  imageUrl: '/api/placeholder/600/400',
-  status: 'Available'
-}}) => {
+import * as CarService from '../../services/CarService';
+import AuthContext from '../../contexts/authContext';
+
+const CarDetails = () => {
+
+  const navigate = useNavigate();
+
+  const { email } = useContext(AuthContext);
+  const [car, setCar] = useState({});
+  const { carId } = useParams();
+
+  useEffect(() => {
+    CarService.getOneCar(carId).then(setCar);
+
+  }, [carId]);
+
+  const isOwner = email === car._ownerId;
+
+  const onBack = () => {
+    navigate('/all-cars');
+  }
+
+  const onDelete = async () => {
+    const confirmed = confirm('Are you sure you want to delete your listing?');
+
+    if (confirmed) {
+      await CarService.deleteCar(carId);
+      navigate('/all-cars');
+    }
+  };
+
   return (
-    <div className={styles.card}>
-      {/* Car Image */}
-      <div className={styles.imageContainer}>
-        <img 
-          src={car.imageUrl} 
-          alt={car.title} 
-          className={styles.image} 
-        />
-        <div className={styles.statusBadge}>
-          {car.status}
+    <div className="car-details-container">
+      <div className="car-details-card">
+        <div className="car-details-header">
+          <button className="back-button" onClick={onBack}>
+            &larr; Back to All Cars
+          </button>
+          <h1 className="car-title">
+            {car.year} {car.make} {car.model}
+          </h1>
         </div>
-      </div>
-      
-      {/* Car Info */}
-      <div className={styles.infoContainer}>
-        <h2 className={styles.title}>{car.title}</h2>
-        <div className={styles.price}>
-          ${car.price.toLocaleString()}
-        </div>
-        
-        {/* Specs Grid */}
-        <div className={styles.specsGrid}>
-          <div className={styles.specItem}>
-            <Calendar className={styles.icon} />
-            <span className={styles.specText}>{car.year}</span>
+
+        <div className="car-details-content">
+          <div className="car-image-container">
+            <img
+              src={car.image}
+              alt={`${car.year} ${car.make} ${car.model}`}
+              className="car-detail-image"
+            />
           </div>
-          <div className={styles.specItem}>
-            <Activity className={styles.icon} />
-            <span className={styles.specText}>{car.mileage.toLocaleString()} miles</span>
-          </div>
-          <div className={styles.specItem}>
-            <Fuel className={styles.icon} />
-            <span className={styles.specText}>{car.fuelType}</span>
-          </div>
-          <div className={styles.specItem}>
-            <Car className={styles.icon} />
-            <span className={styles.specText}>{car.transmission}</span>
-          </div>
-          <div className={styles.specItem}>
-            <Users className={styles.icon} />
-            <span className={styles.specText}>{car.seats} seats</span>
-          </div>
-          <div className={styles.specItem}>
-            <div className={styles.colorDot} style={{ backgroundColor: car.color === 'Midnight Black' ? '#333' : car.color }}></div>
-            <span className={styles.specText}>{car.color}</span>
-          </div>
-        </div>
-        
-        {/* Features */}
-        <div className={styles.featuresContainer}>
-          <h3 className={styles.featuresTitle}>Features</h3>
-          <div className={styles.featuresGrid}>
-            {car.features.slice(0, 6).map((feature, index) => (
-              <div key={index} className={styles.featureItem}>
-                <Check className={styles.checkIcon} />
-                {feature}
+
+          <div className="car-info">
+            <div className="car-info-primary">
+              <div className="car-price-tag">{car.mileage}</div>
+              <div className="car-specs">
+                <div className="car-spec">
+                  <span className="spec-label">Year:</span>
+                  <span className="spec-value">{car.year}</span>
+                </div>
+                <div className="car-spec">
+                  <span className="spec-label">Make:</span>
+                  <span className="spec-value">{car.make}</span>
+                </div>
+                <div className="car-spec">
+                  <span className="spec-label">Model:</span>
+                  <span className="spec-value">{car.model}</span>
+                </div>
+                <div className="car-spec">
+                  <span className="spec-label">Color:</span>
+                  <div className="color-display">
+                    <span className="color-swatch" style={{ backgroundColor: car.color }}></span>
+                    <span className="spec-value">{car.color}</span>
+                  </div>
+                </div>
+                <div className="car-spec">
+                  <span className="spec-label">Mileage:</span>
+                  <span className="spec-value">{car.mileage} miles</span>
+                </div>
               </div>
-            ))}
+            </div>
+
+            <div className="car-description">
+              <h3>Description</h3>
+              <p>{car.description}</p>
+            </div>
+            {isOwner && (
+              <div className="car-actions">
+                <button
+                  className="edit-button"
+                  onClick={() => onEdit(car)}
+                >
+                  Edit Details
+                </button>
+                <button
+                  className="delete-button"
+                  onClick={() => onDelete(car.id)}
+                >
+                  Delete Listing
+                </button>
+              </div>
+            )}
+
+
           </div>
-        </div>
-        
-        {/* Action Buttons */}
-        <div className={styles.buttonContainer}>
-          <button className={styles.primaryButton}>
-            View Details
-          </button>
-          <button className={styles.secondaryButton}>
-            Contact Seller
-          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default CarDetailsCard;
+export default CarDetails;

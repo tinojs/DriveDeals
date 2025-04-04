@@ -6,6 +6,8 @@ import useForm from '../../hooks/useForm';
 
 const RegisterFormKeys = {
     Email: 'email',
+    FirstName: 'firstName',
+    LastName: 'lastName',
     Password: 'password',
     RepeatPassword: 're-password',
 };
@@ -14,6 +16,8 @@ export default function RegisterForm() {
     const { registerSubmitHandler } = useContext(AuthContext);
     const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
         [RegisterFormKeys.Email]: '',
+        [RegisterFormKeys.FirstName]: '',
+        [RegisterFormKeys.LastName]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.RepeatPassword]: '',
     });
@@ -21,7 +25,7 @@ export default function RegisterForm() {
     return (
         <div className="login-container">
             <form className="login-form" onSubmit={onSubmit}>
-                <h2>Sign In</h2>
+                <h2>Sign Up</h2>
 
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.Email}>Email</label>
@@ -33,6 +37,28 @@ export default function RegisterForm() {
                         onChange={onChange}
                     />
                 </div>
+                
+                <div className="form-group">
+                    <label htmlFor={RegisterFormKeys.FirstName}>Fisrt Name</label>
+                    <input
+                        type="firstName"
+                        id={RegisterFormKeys.FirstName}
+                        name={RegisterFormKeys.FirstName}
+                        value={values[RegisterFormKeys.FirstName]}
+                        onChange={onChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor={RegisterFormKeys.LastName}>Last Name</label>
+                    <input
+                        type="lastName"
+                        id={RegisterFormKeys.LastName}
+                        name={RegisterFormKeys.LastName}
+                        value={values[RegisterFormKeys.LastName]}
+                        onChange={onChange}
+                    />
+                </div>
+
 
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.Password}>Password</label>
@@ -46,7 +72,7 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor={RegisterFormKeys.RepeatPassword}>Password</label>
+                    <label htmlFor={RegisterFormKeys.RepeatPassword}>Repeat password</label>
                     <input
                         type="password"
                         id={RegisterFormKeys.RepeatPassword}
@@ -65,7 +91,7 @@ export default function RegisterForm() {
                 </button>
 
                 <div className="signup-link">
-                    You already have an account? <a href="/login">Login</a>
+                    You already have an account? <a href="/login">Sign in</a>
                 </div>
             </form>
         </div>
