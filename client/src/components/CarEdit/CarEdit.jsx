@@ -51,7 +51,7 @@ export default function EditCar() {
         <div className="car-listing-container">
             <div className="car-listing-header">
                 <h2>Edit your listing</h2>
-                <p>Complete the form below to add your vehicle to our marketplace</p>
+                <p>Make the changes needed on the form below to update your listing</p>
             </div>
 
             <form className="car-listing-form" onSubmit={editCarSubmitHandler}>

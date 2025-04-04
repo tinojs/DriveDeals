@@ -10,7 +10,7 @@ const Path = {
     MyProfile: '/my-profile',
     CarDetails: '/cars/:carId',
     CarEdit: '/cars/:carId/edit',
-    // NotFound: '*',
+    NotFound: '*',
 };
 
 export default Path;

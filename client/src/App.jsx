@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <Routes>
-        {/* <Route path={Path.NotFound} element={<NotFoundPage />} /> */}
+        <Route path={Path.NotFound} element={<NotFoundPage />} />
         <Route path={Path.Base} element={<Navigate to={isAuthenticated ? Path.Home : Path.Login} />} />
         <Route path={Path.Login} element={isAuthenticated ? <Navigate to={Path.Home} /> : <LoginPage />} />
         <Route path={Path.Register} element={isAuthenticated ? <Navigate to={Path.Home} /> : <RegisterPage />} />

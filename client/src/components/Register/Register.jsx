@@ -8,6 +8,7 @@ const RegisterFormKeys = {
     Email: 'email',
     FirstName: 'firstName',
     LastName: 'lastName',
+    PhoneNumber: 'phoneNumber',
     Password: 'password',
     RepeatPassword: 're-password',
 };
@@ -18,6 +19,7 @@ export default function RegisterForm() {
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.FirstName]: '',
         [RegisterFormKeys.LastName]: '',
+        [RegisterFormKeys.PhoneNumber]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.RepeatPassword]: '',
     });
@@ -41,7 +43,7 @@ export default function RegisterForm() {
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.FirstName}>Fisrt Name</label>
                     <input
-                        type="firstName"
+                        type="text"
                         id={RegisterFormKeys.FirstName}
                         name={RegisterFormKeys.FirstName}
                         value={values[RegisterFormKeys.FirstName]}
@@ -51,15 +53,23 @@ export default function RegisterForm() {
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.LastName}>Last Name</label>
                     <input
-                        type="lastName"
+                        type="text"
                         id={RegisterFormKeys.LastName}
                         name={RegisterFormKeys.LastName}
                         value={values[RegisterFormKeys.LastName]}
                         onChange={onChange}
                     />
                 </div>
-
-
+                <div className="form-group">
+                    <label htmlFor={RegisterFormKeys.PhoneNumber}>Phone Number</label>
+                    <input
+                        type="text"
+                        id={RegisterFormKeys.PhoneNumber}
+                        name={RegisterFormKeys.PhoneNumber}
+                        value={values[RegisterFormKeys.PhoneNumber]}
+                        onChange={onChange}
+                    />
+                </div>
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.Password}>Password</label>
                     <input

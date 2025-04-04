@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const registerSubmitHandler = async (values) => {
-    const result = await authService.register(values.email, values.password, values.firstName, values.lastName);
+    const result = await authService.register(values.email, values.password, values.firstName, values.lastName, values.phoneNumber);
 
     setAuth(result);
 

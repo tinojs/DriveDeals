@@ -9,7 +9,7 @@ const CarDetails = () => {
 
   const navigate = useNavigate();
 
-  const { email, userId } = useContext(AuthContext);
+  const { userId } = useContext(AuthContext);
   const [car, setCar] = useState({});
   const { carId } = useParams();
 

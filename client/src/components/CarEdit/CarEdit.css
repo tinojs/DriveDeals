@@ -1,4 +1,3 @@
-/* Car Listing Form Styles */
 .car-listing-container {
     max-width: 800px;
     margin: 0 auto;
@@ -145,7 +144,6 @@
     box-shadow: none;
   }
   
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .form-row {
       flex-direction: column;

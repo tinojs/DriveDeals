@@ -148,7 +148,7 @@
 }
 
 .edit-button {
-  background-color: #2563eb;
+  background-color: #93aee7;
   color: white;
   border: none;
 }
@@ -167,7 +167,6 @@
   background-color: #fef2f2;
 }
 
-/* Responsive design */
 @media (min-width: 768px) {
   .car-details-content {
     flex-direction: row;

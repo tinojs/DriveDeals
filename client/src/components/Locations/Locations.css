@@ -1,4 +1,3 @@
-/* Locations Page Styles */
 .locations-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -116,7 +115,6 @@
     background-color: #555;
   }
   
-  /* Responsive Adjustments */
   @media (max-width: 768px) {
     .locations-grid {
       grid-template-columns: 1fr;

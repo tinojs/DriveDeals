@@ -1,4 +1,3 @@
-/* General styling */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +17,6 @@
     padding: 20px;
   }
   
-  /* About section styling */
   .about-section {
     display: flex;
     flex-direction: column;
@@ -105,7 +103,6 @@
     object-fit: cover;
   }
   
-  /* CTA section */
   .about-cta {
     text-align: center;
     padding: 40px;
@@ -144,7 +141,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .about-content {
       flex-direction: column;

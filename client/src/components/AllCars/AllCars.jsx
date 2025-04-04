@@ -3,18 +3,7 @@ import SingleCar from './SingleCar';
 import './AllCars.css';
 import { useCar } from '../../hooks/useCar';
 
-const initialCars = [
-  {
-    _id: 1,
-    make: 'Toyota',
-    model: 'Camry',
-    year: 2022,
-    price: 25999,
-    color: 'Silver',
-    mileage: 15420,
-    image: 'https://i.pinimg.com/736x/62/c2/b9/62c2b90151eb4345b23a159d052ff96e.jpg'
-  },
-];
+const initialCars = [];
 
 const AllCars = () => {
   const { cars, onSubmit, onChange } = useCar(initialCars, () => { })
@@ -30,6 +19,12 @@ const AllCars = () => {
         {cars.map(car => (
           <SingleCar key={car._id} data={car} />
         ))}
+
+        {cars.length === 0 && (
+          <div className="no-cars-message">
+            <h3>No cars available at the moment.</h3>
+          </div>
+        )}
       </div>
 
     </div>

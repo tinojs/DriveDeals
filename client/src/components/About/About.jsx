@@ -6,7 +6,7 @@ const About = () => {
     <div className="container">
       <section className="about-section">
         <div className="about-header">
-          <h1>About Premium Auto Sales</h1>
+          <h1>About Drive Deals</h1>
           <p>Bringing quality vehicles and exceptional service to our community since 2005.</p>
         </div>
         

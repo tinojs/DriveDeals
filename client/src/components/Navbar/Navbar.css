@@ -1,4 +1,3 @@
-/* Navbar.css */
 .navbar {
     background-color: white;
     height: 70px;
@@ -116,7 +115,6 @@
     transition: 0.4s;
   }
   
-  /* Mobile responsiveness */
   @media screen and (max-width: 960px) {
     .menu-icon {
       display: block;
@@ -181,7 +179,7 @@
       flex-direction: column;
       width: 100%;
       position: absolute;
-      top: 390px; /* Adjust based on number of menu items */
+      top: 390px; 
       left: 0;
       background-color: white;
       padding: 20px 0;

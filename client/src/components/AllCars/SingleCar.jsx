@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import AuthContext from '../../contexts/authContext'
 
 const SingleCar = ({
     data,
 }) => {
 
+    const { userId } = useContext(AuthContext);
+
+    const isOwner = userId === data._ownerId;
+    
     return (
         <div className="car-item">
             <div className="car-image">
@@ -19,7 +24,10 @@ const SingleCar = ({
                 <p className="car-color">Color: {data.color}</p>
                 <div className="car-actions">
                     <Link to={`/cars/${data._id}`} className="details-btn">View Details</Link>
-                    <button className="contact-btn">Contact Seller</button>
+
+                    {!isOwner && (
+                        <button className="contact-btn">Contact Seller</button>
+                    )}
                 </div>
             </div>
         </div>
