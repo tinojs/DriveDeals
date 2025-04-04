@@ -13,11 +13,13 @@ import AboutPage from './pages/AboutPage'
 import AllCarsPage from './pages/AllCarsPage'
 import LocationsPage from './pages/LocationsPage'
 import MyProfilePage from './pages/MyProfilePage'
+import CarDetailsPage from './pages/CarDetailsPage'
+import EditCarPage from './pages/EditCarPage'
+
 
 import Path from './paths'
 import AuthGuard from './guards/Authguard'
 import AuthContext from './contexts/authContext'
-import CarDetailsPage from './pages/CarDetailsPage'
 
 function App() {
   const { isAuthenticated } = useContext(AuthContext)
@@ -32,13 +34,14 @@ function App() {
         <Route element={<Layout />}>
           <Route path={Path.Home} element={<HomePage />} />
           <Route path={Path.AllCars} element={<AllCarsPage />} />
-          <Route path={Path.CarDetails + '/:carId'} element={<CarDetailsPage />} />
+          <Route path={Path.CarDetails} element={<CarDetailsPage />} />
           <Route path={Path.About} element={<AboutPage />} />
           <Route path={Path.Locations} element={<LocationsPage />} />
 
           <Route element={<AuthGuard />}>
             <Route path={Path.AddCar} element={<AddCarPage />} />
             <Route path={Path.MyProfile} element={<MyProfilePage />} />
+            <Route path={Path.CarEdit} element={<EditCarPage />} />
           </Route>
 
         </Route>

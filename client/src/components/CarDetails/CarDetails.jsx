@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './CarDetails.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import * as CarService from '../../services/CarService';
 import AuthContext from '../../contexts/authContext';
@@ -93,7 +93,9 @@ const CarDetails = () => {
                 <button
                   className="edit-button"
                 >
+                  <Link to={`/cars/${carId}/edit`}>
                   Edit Details
+                  </Link>
                 </button>
                 <button
                   className="delete-button"

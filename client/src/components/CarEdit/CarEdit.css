@@ -1,0 +1,158 @@
+/* Car Listing Form Styles */
+.car-listing-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .car-listing-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .car-listing-header h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .car-listing-header p {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  .car-listing-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .file-hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .form-error {
+    background-color: #ffebee;
+    color: #d32f2f;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .form-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .image-upload {
+    margin-top: 10px;
+  }
+  
+  .image-preview {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  
+  .image-preview img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+  }
+  
+  .form-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .submit-button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .car-listing-container {
+      padding: 15px;
+    }
+  }
