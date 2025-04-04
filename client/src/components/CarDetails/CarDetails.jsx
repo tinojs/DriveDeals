@@ -9,7 +9,7 @@ const CarDetails = () => {
 
   const navigate = useNavigate();
 
-  const { email } = useContext(AuthContext);
+  const { email, userId } = useContext(AuthContext);
   const [car, setCar] = useState({});
   const { carId } = useParams();
 
@@ -18,7 +18,7 @@ const CarDetails = () => {
 
   }, [carId]);
 
-  const isOwner = email === car._ownerId;
+  const isOwner = userId === car?._ownerId;
 
   const onBack = () => {
     navigate('/all-cars');
@@ -56,7 +56,7 @@ const CarDetails = () => {
 
           <div className="car-info">
             <div className="car-info-primary">
-              <div className="car-price-tag">{car.mileage}</div>
+              <div className="car-price-tag">${car.price}</div>
               <div className="car-specs">
                 <div className="car-spec">
                   <span className="spec-label">Year:</span>
@@ -92,13 +92,12 @@ const CarDetails = () => {
               <div className="car-actions">
                 <button
                   className="edit-button"
-                  onClick={() => onEdit(car)}
                 >
                   Edit Details
                 </button>
                 <button
                   className="delete-button"
-                  onClick={() => onDelete(car.id)}
+                  onClick={onDelete}
                 >
                   Delete Listing
                 </button>
