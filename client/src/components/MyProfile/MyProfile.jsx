@@ -1,20 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
-import * as UserService from '../../services/UserService';
 import AuthContext from '../../contexts/authContext';
 
 import './MyProfile.css';
 
-
 const MyProfile = () => {
-
-  const { userId } = useContext(AuthContext);
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    UserService.getUser(userId).then(setUser)
-  }, [userId]);
-
+  const { firstName, lastName, email, phoneNumber } = useContext(AuthContext);
 
   return (
     <div className="profile-container">
@@ -25,19 +16,19 @@ const MyProfile = () => {
           <div className="profile-details">
             <div className="profile-field">
               <label>First Name</label>
-              <p>{user.firstName}</p>
+              <p>{firstName}</p>
             </div>
             <div className="profile-field">
               <label>Last Name</label>
-              <p>{user.lastName}</p>
+              <p>{lastName}</p>
             </div>
             <div className="profile-field">
               <label>Email</label>
-              <p>{user.email}</p>
+              <p>{email}</p>
             </div>
             <div className="profile-field">
               <label>Phone</label>
-              <p>{user.phone}</p>
+              <p>{phoneNumber}</p>
             </div>
 
             <button

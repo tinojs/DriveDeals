@@ -26,7 +26,7 @@ const SingleCar = ({
                     <Link to={`/cars/${data._id}`} className="details-btn">View Details</Link>
 
                     {!isOwner && (
-                        <button className="contact-btn">Contact Seller</button>
+                        <Link to={`tel:${data.contactPhone}`} className="contact-btn">Contact Seller</Link>
                     )}
                 </div>
             </div>
