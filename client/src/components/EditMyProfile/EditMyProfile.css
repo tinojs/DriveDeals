@@ -1,0 +1,155 @@
+.profile-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .profile-sidebar {
+    width: 250px;
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .sidebar-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .sidebar-item.active {
+    background-color: #e63946;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .profile-content {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .profile-section,
+  .my-ads-section {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .profile-section h2,
+  .my-ads-section h2 {
+    border-bottom: 2px solid #e63946;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profile-details,
+  .profile-edit {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .profile-field {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .profile-field label {
+    display: block;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .profile-field p {
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .edit-profile-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .edit-profile-btn:hover {
+    background-color: #357abd;
+  }
+  
+  .profile-edit .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-edit input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  .edit-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .save-btn,
+  .cancel-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .save-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+    }
+  
+    .profile-sidebar {
+      width: 100%;
+      display: flex;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .sidebar-item {
+      flex: 1;
+      text-align: center;
+    }
+  }

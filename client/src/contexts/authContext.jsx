@@ -1,9 +1,7 @@
-import { createContext, useEffect } from "react";
-
+import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as authService from "../services/AuthService";
-import * as UserService from "../services/UserService";
 import Path from "../paths";
 import usePersistedState from "../hooks/usePersistedState";
 
@@ -17,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     const result = await authService.login(values.email, values.password);
 
     setAuth(result);
-    
+
     localStorage.setItem("accessToken", result.accessToken);
 
     navigate(Path.Home);

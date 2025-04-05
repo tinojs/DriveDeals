@@ -1,12 +1,15 @@
 import { useNavigate, useParams } from 'react-router-dom';
 
 import * as CarService from '../../services/CarService';
+import * as useForm from '../../hooks/useForm';
+
 import './CarEdit.css';
 import { useEffect, useState } from 'react';
 
 export default function EditCar() {
 
     const navigate = useNavigate();
+    const { onChange } = useForm();
 
     const { carId } = useParams();
     const [car, setCar] = useState({
@@ -39,14 +42,6 @@ export default function EditCar() {
         }
     }
     
-    const onChange = (e) => {
-        setCar(state => ({
-            ...state,
-            [e.target.name]: e.target.value
-        }))
-    };
-
-
     return (
         <div className="car-listing-container">
             <div className="car-listing-header">

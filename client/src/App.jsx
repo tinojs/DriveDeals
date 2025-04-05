@@ -15,6 +15,7 @@ import LocationsPage from './pages/LocationsPage'
 import MyProfilePage from './pages/MyProfilePage'
 import CarDetailsPage from './pages/CarDetailsPage'
 import EditCarPage from './pages/EditCarPage'
+import EditMyProfilePage from './pages/EditMyProfilePage'
 
 
 import Path from './paths'
@@ -41,6 +42,7 @@ function App() {
           <Route element={<AuthGuard />}>
             <Route path={Path.AddCar} element={<AddCarPage />} />
             <Route path={Path.MyProfile} element={<MyProfilePage />} />
+            <Route path={Path.EditMyProfile} element={<EditMyProfilePage />} />
             <Route path={Path.CarEdit} element={<EditCarPage />} />
           </Route>
 

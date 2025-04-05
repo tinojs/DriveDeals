@@ -1,8 +1,11 @@
+import './MyProfile.css';
+
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import AuthContext from '../../contexts/authContext';
+import Path from '../../paths';
 
-import './MyProfile.css';
 
 const MyProfile = () => {
   const { firstName, lastName, email, phoneNumber } = useContext(AuthContext);
@@ -31,11 +34,9 @@ const MyProfile = () => {
               <p>{phoneNumber}</p>
             </div>
 
-            <button
-              className="edit-profile-btn"
-            >
+            <Link to={Path.EditMyProfile} className="edit-profile-btn">
               Edit Profile
-            </button>
+            </Link>
           </div>
         </div>
 
