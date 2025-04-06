@@ -11,6 +11,13 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [auth, setAuth] = usePersistedState("auth", {});
 
+  const updateUserProfile = (newProfileData) => {
+    setAuth((prevAuth) => ({
+      ...prevAuth,
+      ...newProfileData, 
+    }));
+  };
+
   const loginSubmitHandler = async (values) => {
     const result = await authService.login(values.email, values.password);
 
@@ -42,6 +49,7 @@ export const AuthProvider = ({ children }) => {
     loginSubmitHandler,
     registerSubmitHandler,
     logoutHandler,
+    updateUserProfile,
     username: auth.username || auth.email,
     email: auth.email,
     userId: auth._id,

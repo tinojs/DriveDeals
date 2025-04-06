@@ -167,6 +167,84 @@
   background-color: #fef2f2;
 }
 
+/* New Offer Section Styles */
+.offer-section {
+  padding: 2rem;
+  background-color: #f0f7ff;
+  border-top: 1px solid #d1e3ff;
+}
+
+.offer-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.offer-header h2 {
+  font-size: 1.75rem;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.offer-header p {
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.offer-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.offer-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.offer-form-group label {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.offer-form-group input,
+.offer-form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.offer-form-group input:focus,
+.offer-form-group textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.submit-offer-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.submit-offer-btn:hover {
+  background-color: #1d4ed8;
+}
+
 @media (min-width: 768px) {
   .car-details-content {
     flex-direction: row;
@@ -178,9 +256,7 @@
     min-height: 500px;
   }
   
-  .car-info {
-    width: 50%;
-  }
+ 
 }
 
 @media (max-width: 767px) {
@@ -198,5 +274,13 @@
   
   .car-title {
     font-size: 1.5rem;
+  }
+  
+  .offer-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .submit-offer-btn {
+    width: 100%;
   }
 }

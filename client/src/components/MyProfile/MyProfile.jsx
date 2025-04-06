@@ -33,10 +33,6 @@ const MyProfile = () => {
               <label>Phone</label>
               <p>{phoneNumber}</p>
             </div>
-
-            <Link to={Path.EditMyProfile} className="edit-profile-btn">
-              Edit Profile
-            </Link>
           </div>
         </div>
 

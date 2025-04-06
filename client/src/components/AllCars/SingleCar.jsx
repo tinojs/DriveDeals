@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import AuthContext from '../../contexts/authContext'
+import './AllCars.css'
 
 const SingleCar = ({
     data,
