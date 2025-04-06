@@ -167,7 +167,7 @@
   background-color: #fef2f2;
 }
 
-/* New Offer Section Styles */
+/* Make an Offer Section Styles */
 .offer-section {
   padding: 2rem;
   background-color: #f0f7ff;
@@ -245,6 +245,142 @@
   background-color: #1d4ed8;
 }
 
+/* Offers List Section - For car owners to view received offers */
+.offers-list-section {
+  padding: 2rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.offers-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.offers-header h2 {
+  font-size: 1.75rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.offers-header p {
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.offers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.offer-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.offer-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.offer-date {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.contact-phone {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.offer-message {
+  padding: 1.25rem;
+  flex-grow: 1;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.offer-actions {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  gap: 0.5rem;
+}
+
+.contact-btn {
+  flex: 2;
+  padding: 0.625rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.decline-offer-btn {
+  flex: 1;
+  padding: 0.625rem;
+  background-color: white;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.decline-offer-btn:hover {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* No Offers Section */
+.no-offers-section {
+  padding: 3rem 2rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.no-offers-message {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.no-offers-message h3 {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.no-offers-message p {
+  color: #94a3b8;
+}
+
 @media (min-width: 768px) {
   .car-details-content {
     flex-direction: row;
@@ -256,7 +392,9 @@
     min-height: 500px;
   }
   
- 
+  .car-info {
+    width: 50%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -276,11 +414,20 @@
     font-size: 1.5rem;
   }
   
-  .offer-header h2 {
+  .offer-header h2,
+  .offers-header h2 {
     font-size: 1.5rem;
   }
   
   .submit-offer-btn {
     width: 100%;
+  }
+  
+  .offers-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .offer-actions {
+    flex-direction: column;
   }
 }

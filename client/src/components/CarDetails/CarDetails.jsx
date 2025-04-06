@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import * as CarService from '../../services/CarService';
 import AuthContext from '../../contexts/authContext';
+import CommentCard from './commentCard';
 
 const CarDetails = () => {
 
@@ -109,46 +110,10 @@ const CarDetails = () => {
 
           </div>
         </div>
-        {!isOwner && (
-          <div className="offer-section">
-            <div className="offer-header">
-              <h2>Do you like this car? Make an offer now!</h2>
-              <p>Fill out the form below to submit your interest and we'll get back to you shortly.</p>
-            </div>
 
-            <form className="offer-form" >
-              <div className="offer-form-group">
-                <label htmlFor="phoneNumber">Your Phone Number</label>
-                <input
-                  type="tel"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  // value={offerData.phoneNumber}
-                  // onChange={handleOfferChange}
-                  placeholder="(555) 123-4567"
-                  required
-                />
-              </div>
+        <CommentCard isOwner={isOwner}/>
 
-              <div className="offer-form-group">
-                <label htmlFor="note">Your Offer/Note</label>
-                <textarea
-                  id="note"
-                  name="note"
-                  // value={offerData.note}
-                  // onChange={handleOfferChange}
-                  placeholder="I'm interested in this vehicle and would like to make an offer of $..."
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
 
-              <button type="submit" className="submit-offer-btn">
-                Submit Offer
-              </button>
-            </form>
-          </div>
-        )}
       </div>
     </div>
   );
