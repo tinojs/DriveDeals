@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import './Locations.css';
+
+import React, { useState } from 'react';
 
 const Locations = () => {
   const [activeLocation, setActiveLocation] = useState(null);
@@ -32,7 +33,6 @@ const Locations = () => {
   ];
 
   const handleDirections = (location) => {
-    // Open Google Maps directions in a new tab
     const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location.address)}`;
     window.open(googleMapsDirectionsUrl, '_blank');
   };

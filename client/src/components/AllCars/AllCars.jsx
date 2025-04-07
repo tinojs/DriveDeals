@@ -1,7 +1,9 @@
-import React from 'react';
-import SingleCar from './SingleCar';
 import './AllCars.css';
+
+import React from 'react';
 import { useCar } from '../../hooks/useCar';
+
+import SingleCar from './SingleCar';
 
 const initialCars = [];
 

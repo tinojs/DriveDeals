@@ -1,6 +1,8 @@
+import './Navbar.css';
+
 import React, { useContext, useState } from 'react';
-import './Navbar.css'; // We'll define this CSS below
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 import AuthContext from '../../contexts/authContext';
 
 const Navbar = () => {

@@ -1,11 +1,8 @@
 import './MyProfile.css';
 
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 
 import AuthContext from '../../contexts/authContext';
-import Path from '../../paths';
-
 
 const MyProfile = () => {
   const { firstName, lastName, email, phoneNumber } = useContext(AuthContext);
@@ -35,9 +32,6 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
   );

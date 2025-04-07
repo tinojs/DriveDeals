@@ -1,8 +1,9 @@
+import './AllCars.css'
+
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import AuthContext from '../../contexts/authContext'
-import './AllCars.css'
 
 const SingleCar = ({
     data,
@@ -28,7 +29,7 @@ const SingleCar = ({
                     <Link to={`/cars/${data._id}`} className="details-btn">View Details</Link>
 
                     {!isOwner && (
-                        <Link to={`tel:${data.contactPhone}`} className="contact-btn">Contact Seller</Link>
+                        <Link to={`tel:${data.phoneNumber}`} className="contact-btn">Contact Seller</Link>
                     )}
                 </div>
             </div>

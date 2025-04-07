@@ -1,11 +1,12 @@
+import './CarEdit.css';
+
 import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import * as CarService from '../../services/CarService';
 
-import './CarEdit.css';
-import { useEffect, useState } from 'react';
 
-export default function EditCar() {
+const EditCar = () => {
 
     const navigate = useNavigate();
 
@@ -180,3 +181,4 @@ export default function EditCar() {
     );
 };
 
+export default EditCar;

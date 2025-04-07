@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
 import '../Login/Login.css';
+
+import React, { useContext } from 'react';
+
 import AuthContext from '../../contexts/authContext';
 import useForm from '../../hooks/useForm';
-
 
 const RegisterFormKeys = {
     Email: 'email',
@@ -13,7 +14,7 @@ const RegisterFormKeys = {
     RepeatPassword: 're-password',
 };
 
-export default function RegisterForm() {
+const RegisterForm = () => {
     const { registerSubmitHandler } = useContext(AuthContext);
     const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
         [RegisterFormKeys.Email]: '',
@@ -39,7 +40,7 @@ export default function RegisterForm() {
                         onChange={onChange}
                     />
                 </div>
-                
+
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.FirstName}>Fisrt Name</label>
                     <input
@@ -91,7 +92,6 @@ export default function RegisterForm() {
                         onChange={onChange}
                     />
                 </div>
-
                 <button
                     type="submit"
                     className="login-button"
@@ -99,7 +99,6 @@ export default function RegisterForm() {
                 >
                     Register
                 </button>
-
                 <div className="signup-link">
                     You already have an account? <a href="/login">Sign in</a>
                 </div>
@@ -108,3 +107,4 @@ export default function RegisterForm() {
     );
 };
 
+export default RegisterForm;
