@@ -18,4 +18,5 @@ Browse Listings:
 Technologies Used:
 
 ---React
+
 ---SoftUni Practice Server (for backend API)
