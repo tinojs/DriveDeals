@@ -10,7 +10,6 @@ import AuthContext from '../../contexts/authContext';
 const AddCar = () => {
 
   const { phoneNumber } = useContext(AuthContext);
-  console.log(phoneNumber);
 
 
   const navigate = useNavigate();
@@ -29,7 +28,6 @@ const AddCar = () => {
       navigate('/all-cars');
     } catch (error) {
       console.log(error);
-
     }
   }
 

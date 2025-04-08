@@ -167,7 +167,6 @@
   background-color: #fef2f2;
 }
 
-/* Make an Offer Section Styles */
 .offer-section {
   padding: 2rem;
   background-color: #f0f7ff;
@@ -245,7 +244,6 @@
   background-color: #1d4ed8;
 }
 
-/* Offers List Section - For car owners to view received offers */
 .offers-list-section {
   padding: 2rem;
   background-color: #f8fafc;
@@ -358,7 +356,6 @@
   color: #475569;
 }
 
-/* No Offers Section */
 .no-offers-section {
   padding: 3rem 2rem;
   background-color: #f8fafc;

@@ -1,6 +1,9 @@
 import './About.css';
 
+import { Link } from 'react-router-dom';
 import React from 'react';
+
+import Path from '../../paths';
 
 const About = () => {
   return (
@@ -10,7 +13,7 @@ const About = () => {
           <h1>About Drive Deals</h1>
           <p>Bringing quality vehicles and exceptional service to our community since 2005.</p>
         </div>
-        
+
         <div className="about-content">
           <div className="about-story">
             <h2>Our Story</h2>
@@ -18,14 +21,14 @@ const About = () => {
             <p>Starting with just five cars in a small lot, we've grown to become the region's most trusted dealership with hundreds of satisfied customers who return to us time and again.</p>
             <p>Our commitment to excellence has never wavered. We personally inspect every vehicle that comes through our doors, ensuring that we only sell cars we would be proud to drive ourselves.</p>
           </div>
-          
-          
+
+
         </div>
-        
+
         <div className="about-cta">
           <h2>Ready to Find Your Next Car?</h2>
           <p>Click below to see all cars that are up for sale.</p>
-          <a href="/all-cars" className="cta-button">All cars available</a>
+            <Link to={Path.AllCars} className="cta-button">All cars available</Link>
         </div>
       </section>
     </div>
