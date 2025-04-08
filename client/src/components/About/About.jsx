@@ -27,7 +27,8 @@ const About = () => {
 
         <div className="about-cta">
           <h2>Ready to Find Your Next Car?</h2>
-          <p>Click below to see all cars that are up for sale.</p>
+          <p>Click below to see all cars that are listed.</p>
+          
             <Link to={Path.AllCars} className="cta-button">All cars available</Link>
         </div>
       </section>
