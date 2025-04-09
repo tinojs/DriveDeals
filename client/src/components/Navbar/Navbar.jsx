@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <NavLink to="/home">MyApp</NavLink>
+          <NavLink to="/home">Drive Deals</NavLink>
         </div>
 
         <div className="menu-icon" onClick={toggleMenu}>

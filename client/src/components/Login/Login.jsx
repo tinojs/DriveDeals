@@ -1,9 +1,10 @@
 import './Login.css';
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import AuthContext from '../../contexts/authContext';
 import useForm from '../../hooks/useForm';
+import loginSchema from './loginSchema';
 
 const LoginFormKeys = {
     Email: 'email',
@@ -11,11 +12,25 @@ const LoginFormKeys = {
 };
 
 const LoginForm = () => {
+    const [errors, setErrors] = useState({});
     const { loginSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    const { values, onChange, onSubmit } = useForm(handleOnSubmit, {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     });
+
+    function handleOnSubmit() {
+        const result = loginSchema.safeParse(values);
+        if (!result.success) {
+            const newErrors = {};
+            result.error.issues.forEach(issue => {
+                newErrors[issue.path[0]] = issue.message;
+            });
+            setErrors(newErrors);
+        } else {
+            loginSubmitHandler(values);
+        }
+    }
 
     return (
         <div className="login-container">
@@ -31,6 +46,7 @@ const LoginForm = () => {
                         value={values[LoginFormKeys.Email]}
                         onChange={onChange}
                     />
+                    {errors[LoginFormKeys.Email] && <span className="error">{errors[LoginFormKeys.Email]}</span>}
                 </div>
 
                 <div className="form-group">
@@ -42,6 +58,7 @@ const LoginForm = () => {
                         value={values[LoginFormKeys.Password]}
                         onChange={onChange}
                     />
+                    {errors[LoginFormKeys.Password] && <span className="error">{errors[LoginFormKeys.Password]}</span>}
                 </div>
 
                 <button
