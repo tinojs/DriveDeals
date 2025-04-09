@@ -53,8 +53,9 @@ const RegisterForm = () => {
                         name={RegisterFormKeys.Email}
                         value={values[RegisterFormKeys.Email]}
                         onChange={onChange}
+                        placeholder={errors[RegisterFormKeys.Email] ? errors[RegisterFormKeys.Email] : 'Enter your email'}
+                        style={errors[RegisterFormKeys.Email] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[RegisterFormKeys.Email] && <span className="error">{errors[RegisterFormKeys.Email]}</span>}
                 </div>
 
                 <div className="form-group">
@@ -65,8 +66,9 @@ const RegisterForm = () => {
                         name={RegisterFormKeys.FirstName}
                         value={values[RegisterFormKeys.FirstName]}
                         onChange={onChange}
+                        placeholder={errors[RegisterFormKeys.FirstName] ? errors[RegisterFormKeys.FirstName] : 'Enter your first name'}
+                        style={errors[RegisterFormKeys.FirstName] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[RegisterFormKeys.FirstName] && <span className="error">{errors[RegisterFormKeys.FirstName]}</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.LastName}>Last Name</label>
@@ -76,8 +78,9 @@ const RegisterForm = () => {
                         name={RegisterFormKeys.LastName}
                         value={values[RegisterFormKeys.LastName]}
                         onChange={onChange}
+                        placeholder={errors[RegisterFormKeys.LastName] ? errors[RegisterFormKeys.LastName] : 'Enter your last name'}
+                        style={errors[RegisterFormKeys.LastName] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[RegisterFormKeys.LastName] && <span className="error">{errors[RegisterFormKeys.LastName]}</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.PhoneNumber}>Phone Number</label>
@@ -87,8 +90,9 @@ const RegisterForm = () => {
                         name={RegisterFormKeys.PhoneNumber}
                         value={values[RegisterFormKeys.PhoneNumber]}
                         onChange={onChange}
+                        placeholder={errors[RegisterFormKeys.PhoneNumber] ? errors[RegisterFormKeys.PhoneNumber] : 'Enter your phone number'}
+                        style={errors[RegisterFormKeys.PhoneNumber] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[RegisterFormKeys.PhoneNumber] && <span className="error">{errors[RegisterFormKeys.PhoneNumber]}</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor={RegisterFormKeys.Password}>Password</label>
@@ -98,8 +102,9 @@ const RegisterForm = () => {
                         name={RegisterFormKeys.Password}
                         value={values[RegisterFormKeys.Password]}
                         onChange={onChange}
+                        placeholder={errors[RegisterFormKeys.Password] ? errors[RegisterFormKeys.Password] : 'Enter your password'}
+                        style={errors[RegisterFormKeys.Password] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[RegisterFormKeys.Password] && <span className="error">{errors[RegisterFormKeys.Password]}</span>}
                 </div>
 
                 <div className="form-group">
@@ -110,8 +115,9 @@ const RegisterForm = () => {
                         name={RegisterFormKeys.RepeatPassword}
                         value={values[RegisterFormKeys.RepeatPassword]}
                         onChange={onChange}
+                        placeholder={errors[RegisterFormKeys.RepeatPassword] ? errors[RegisterFormKeys.RepeatPassword] : 'Repeat your password'}
+                        style={errors[RegisterFormKeys.RepeatPassword] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[RegisterFormKeys.RepeatPassword] && <span className="error">{errors[RegisterFormKeys.RepeatPassword]}</span>}
                 </div>
                 <button
                     type="submit"

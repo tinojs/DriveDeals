@@ -45,8 +45,9 @@ const LoginForm = () => {
                         name={LoginFormKeys.Email}
                         value={values[LoginFormKeys.Email]}
                         onChange={onChange}
+                        placeholder={errors[LoginFormKeys.Email] ? errors[LoginFormKeys.Email] : 'Enter your email'}
+                        style={errors[LoginFormKeys.Email] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[LoginFormKeys.Email] && <span className="error">{errors[LoginFormKeys.Email]}</span>}
                 </div>
 
                 <div className="form-group">
@@ -57,8 +58,9 @@ const LoginForm = () => {
                         name={LoginFormKeys.Password}
                         value={values[LoginFormKeys.Password]}
                         onChange={onChange}
+                        placeholder={errors[LoginFormKeys.Password] ? errors[LoginFormKeys.Password] : 'Enter your password'}
+                        style={errors[LoginFormKeys.Password] ? { borderColor: 'red' } : {}}
                     />
-                    {errors[LoginFormKeys.Password] && <span className="error">{errors[LoginFormKeys.Password]}</span>}
                 </div>
 
                 <button
